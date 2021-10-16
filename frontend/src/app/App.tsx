@@ -22,7 +22,8 @@ const StyledHeader = styled(Header)`
 `;
 
 const StyledContent = styled(Content)`
-  background-color: ${colors.primary[6]};
+  //background-color: ${colors.primary[6]};
+  background-color: burlywood;
 `;
 
 function App() {

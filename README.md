@@ -11,9 +11,7 @@ A task board featuring drag 'n' drop functionality.
 #### Java Version
 11
 
-#### Docker Launch
-1. 
+#### Launch Instructions
+Coming soon.
 
-#### Maven Launch
-1
 

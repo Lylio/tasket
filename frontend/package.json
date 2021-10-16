@@ -1,8 +1,8 @@
 {
-  "name": "drag-and-drop-taskboard",
+  "name": "tasket",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://onderonur.github.io/drag-and-drop-taskboard/",
+  "homepage": "https://github.com/Lylio/tasket",
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
     "@ant-design/icons": "^4.6.2",
