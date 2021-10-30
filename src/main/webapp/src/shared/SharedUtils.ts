@@ -1,5 +1,5 @@
-import { geekblue } from '@ant-design/colors';
+import { blue } from '@ant-design/colors';
 
 export const colors = {
-  primary: geekblue,
+  primary: blue,
 };

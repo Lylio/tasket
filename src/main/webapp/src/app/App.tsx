@@ -1,5 +1,5 @@
 import { Typography } from 'antd';
-import Layout, { Content, Header } from 'antd/lib/layout/layout';
+import Layout, { Content, Header, Footer } from 'antd/lib/layout/layout';
 import styled from 'styled-components';
 import { colors } from '../shared/SharedUtils';
 import Taskboard from '../taskboard/Taskboard';
@@ -18,11 +18,18 @@ const StyledLayout = styled(Layout)`
 const StyledHeader = styled(Header)`
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #b2daf1;
+`;
+
+const StyledFooter = styled(Footer)`
+  display: flex;
+  align-items: center;
+  background-color: #b2daf1;
+  text-align: center;
 `;
 
 const StyledContent = styled(Content)`
-  background-color: ${colors.primary[6]};
+  background-color: ${colors.primary[3]};
 `;
 
 function App() {
@@ -30,12 +37,25 @@ function App() {
     <StyledLayout>
       <StyledHeader>
         <Typography.Title level={3} type="secondary">
-          <a href="/">Tasket</a>
+          <a href="/">Tasket 📝</a>
         </Typography.Title>
       </StyledHeader>
       <StyledContent>
         <Taskboard />
       </StyledContent>
+      <StyledFooter>
+        <div
+          style={{
+            fontSize: '1.5em',
+            color: '#567891',
+            textAlign: 'center',
+            fontWeight: 'bold',
+            margin: 'auto'
+          }}
+        >
+          ©2021 LYLE CHRISTINE
+        </div>
+      </StyledFooter>
     </StyledLayout>
   );
 }

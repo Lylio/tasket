@@ -13,7 +13,7 @@ interface StyledCardProps {
 const StyledCard = styled(Card)<StyledCardProps>`
   margin: 0.5rem;
   padding: 0.5rem;
-  background-color: ${({ $isDragging }) => ($isDragging ? '#fafafa' : '#fff')};
+  background-color: ${({ $isDragging }) => ($isDragging ? '#d1e7f3' : '#b2daf1')};
 `;
 
 const TaskboardItemCardTitle = styled(Typography.Title)`
@@ -52,7 +52,7 @@ function TaskboardItemCard({
       size="small"
       title={
         <BaseTooltip overlay={item.title}>
-          {/* styled(Typography.Title) throws an error in console about 
+          {/* styled(Typography.Title) throws an error in console about
           forwarding ref in function components.
           Because Typography.Title doesn't accept a ref.
           So, we just placed a span tag here. */}

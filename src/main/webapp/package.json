@@ -38,12 +38,7 @@
     "typecheck": "tsc --noEmit",
     "lint:fix": "eslint --fix --max-warnings 0 src"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:8080",
-      "ws": true
-    }
-  },
+
   "lint-staged": {
     "src/*": "npm run lint:fix"
   },
