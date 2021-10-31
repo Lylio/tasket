@@ -46,7 +46,7 @@ function App() {
       <StyledFooter>
         <div
           style={{
-            fontSize: '1.5em',
+            fontSize: '1em',
             color: '#567891',
             textAlign: 'center',
             fontWeight: 'bold',
