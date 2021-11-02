@@ -32,4 +32,16 @@ The necessary table and column values will be auto-created by Hibernate when the
 3. Run the JAR with `java -jar target/tasket-0.0.1-SNAPSHOT.jar`
 4. Open browser at http://localhost:8080
 
+#### Spring Profiles
+There are two Spring profiles available with corresponding database config data: **dev** and **default**.
+
+1. Create a JAR file with the command `mvn clean package` in the application's root folder
+2. In the /target directory, run the JAR file and include the desired **dev** profile passed as an
+   argument:
+
+e.g. `java -jar -Dspring.profiles.active=dev tasket-0.0.1-SNAPSHOT.jar`
+
+If the default H2 in-memory database is used, the GUI can be reached at http://localhost:8080/h2/ and logged into with
+username `sa` (no password needed).
+
 
