@@ -24,6 +24,9 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
+  config:
+    activate:
+      on-profile: default
 logging:
   level:
     liquibase: INFO
@@ -31,7 +34,7 @@ logging:
 ---
 
 # Dev Database Properties (local PostgreSQL)
-spring.:
+spring:
   banner:
     location: banner-dev.txt
   liquibase:
@@ -50,7 +53,6 @@ spring.:
 logging:
   level:
     liquibase: INFO
-spring:
   jpa:
     hibernate:
       ddl-auto: none
