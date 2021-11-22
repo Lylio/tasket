@@ -50,6 +50,6 @@ If the default H2 in-memory database is used, the H2 console can be reached at h
 #### Docker Launch
 1. `docker build -t tasket .`
 2. `docker run -p 8080:8080 tasket:latest` (note: the port number *has* to be 8080)  
-or
+   (or to run the **dev** Spring profile)
 3. `docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=dev" tasket:latest`
 
