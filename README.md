@@ -16,20 +16,21 @@ A task board featuring drag 'n' drop functionality.
 This app includes the plugins _frontend-maven-plugin_ and _maven-resources-plugin_. This enables the Spring Boot
 backend and React frontend to be packaged into a single JAR which runs both components together on a single port.
 
-The app requires a local PostgreSQL database to be active in order to launch.
+The default Spring profile of the app runs using an H2 (in-memory) database. The **dev** Spring profile requires a local 
+PostgreSQL database to be active in order to launch.
 
 #### Database
-1. Update the `src/main/resources/application.properties` file to reflect the PostgreSQL username and password details used by
+1. Update the `src/main/resources/application.yml` file to reflect the database connection username and password details used by
 your local instance of PostgreSQL
 2. Create a database called 'tasket' (accessible at localhost:5432) using **psql** or a database IDE:  
    `CREATE DATABASE tasket`
 
-The necessary table and column values will be auto-created by Hibernate when the app starts.
+The necessary table and column values will be auto-created by Liquibase when the app starts.
 
 #### Maven Launch
 1. Navigate to the root directory (where pom.xml is)
 2. Run `mvn clean package` which will create an uber-JAR
-3. Run the JAR with `java -jar target/tasket-0.0.1-SNAPSHOT.jar`
+3. Run the JAR with `java -jar target/tasket-0.0.1-SNAPSHOT.jar` (this is the **default** Spring profile)
 4. Open browser at http://localhost:8080
 
 #### Spring Profiles
@@ -41,7 +42,12 @@ There are two Spring profiles available with corresponding database config data:
 
 e.g. `java -jar -Dspring.profiles.active=dev tasket-0.0.1-SNAPSHOT.jar`
 
-If the default H2 in-memory database is used, the GUI can be reached at http://localhost:8080/h2/ and logged into with
-username `sa` (no password needed).
+If the default H2 in-memory database is used, the H2 console can be reached at http://localhost:8080/h2/ and logged into with
+- url: **jdbc:h2:mem:tasket**
+- username: **tasket** 
+- password: **tasket**
 
+#### Docker Launch
+1. `docker build -t tasket .`
+2. `docker run -p 8080:8080 tasket:latest` (note: the port number *has* to be 8080)
 
