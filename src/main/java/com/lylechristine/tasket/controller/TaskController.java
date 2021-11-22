@@ -19,7 +19,7 @@ public class TaskController {
     }
 
     @PutMapping("{id}")
-    public Task update(@PathVariable("id") String id, @RequestBody TaskRequest taskRequest) {
+    public Task update(@PathVariable("id") Long id, @RequestBody TaskRequest taskRequest) {
         return taskService.update(taskRequest);
     }
 
@@ -34,7 +34,7 @@ public class TaskController {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable("id") String id) {
+    public void delete(@PathVariable("id") Long id) {
         taskService.delete(id);
     }
 

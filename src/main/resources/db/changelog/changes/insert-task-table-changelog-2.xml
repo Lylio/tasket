@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="lylio" id="2">
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="10"/>
+            <column name="description" value="Ensure the UUID column works."/>
+            <column name="position" valueNumeric="0"/>
+            <column name="status" value="TODO"/>
+            <column name="title" value="Liquibase Script"/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="11"/>
+            <column name="description" value="Confirm second task works"/>
+            <column name="position" valueNumeric="1"/>
+            <column name="status" value="TODO"/>
+            <column name="title" value="Second Row"/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="12"/>
+            <column name="description" value="This is a task that's in progress"/>
+            <column name="position" valueNumeric="0"/>
+            <column name="status" value="IN_PROGRESS"/>
+            <column name="title" value="Current Activity"/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="13"/>
+            <column name="description" value="This task has been completed"/>
+            <column name="position" valueNumeric="0"/>
+            <column name="status" value="DONE"/>
+            <column name="title" value="Congrats - a finished ticket"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

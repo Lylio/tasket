@@ -69,7 +69,7 @@ public class TaskService {
     }
 
     @Transactional
-    public void delete(String id) {
+    public void delete(Long id) {
         Task task = taskRepository.findById(id)
                 .orElseThrow(TaskNotFoundException::new);
         taskRepository.decrementBelow(task.getPosition(), task.getStatus(), task.getId());

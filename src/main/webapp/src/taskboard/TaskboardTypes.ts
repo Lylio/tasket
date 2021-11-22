@@ -1,5 +1,5 @@
 export interface TaskboardItem {
-  id: string;
+  id: number;
   title: string;
   description: string;
   position: number;

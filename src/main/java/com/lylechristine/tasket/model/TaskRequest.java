@@ -2,17 +2,17 @@ package com.lylechristine.tasket.model;
 
 public class TaskRequest {
 
-    private String id;
+    private Long id;
     private String title;
     private String description;
     private Status status;
     private Long position;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

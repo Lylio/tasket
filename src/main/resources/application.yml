@@ -2,6 +2,8 @@
 spring:
   banner:
     location: banner-default.txt
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
   h2:
     console:
       enabled: true
@@ -15,24 +17,28 @@ spring:
     password: tasket
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
+      use-new-id-generator-mappings: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+logging:
+  level:
+    liquibase: INFO
 
 ---
 
 # Dev Database Properties (local PostgreSQL)
-spring:
+spring.:
   banner:
     location: banner-dev.txt
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
   config:
     activate:
       on-profile: dev
-  jpa:
-    hibernate:
-      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -40,7 +46,15 @@ spring:
     url: jdbc:postgresql://localhost:5432/tasket
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: P@$$w0rd
+    password: postgres
+logging:
+  level:
+    liquibase: INFO
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+
 ---
 
 # Prod Database Properties
