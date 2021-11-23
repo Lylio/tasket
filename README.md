@@ -5,7 +5,8 @@
 # Tasket
 
 ### Description
-A task board featuring drag 'n' drop functionality.
+A task board featuring drag 'n' drop functionality. Demo can be found hosted on Heroku:  
+https://tasket-demo.herokuapp.com
 
 ### Tech Stack
 - Spring Boot (JDK 11)
