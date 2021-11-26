@@ -53,7 +53,7 @@ function App() {
             margin: 'auto'
           }}
         >
-          ©2021 LYLE CHRISTINE
+          ©2021 <a href="https://www.linkedin.com/in/lylechristine/">LYLE CHRISTINE</a>
         </div>
       </StyledFooter>
     </StyledLayout>
