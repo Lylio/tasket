@@ -46,7 +46,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://localhost:5432/tasket
+    url: jdbc:postgresql://127.0.0.1:5432/tasket
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
@@ -61,6 +61,27 @@ logging:
 
 # Prod Database Properties
 
-
+spring:
+  banner:
+    location: banner-prod.txt
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+  config:
+    activate:
+      on-profile: prod
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: 
+    driver-class-name: org.postgresql.Driver
+    username:
+    password:
+logging:
+  level:
+    liquibase: INFO
+  jpa:
+    hibernate:
+      ddl-auto: none
 
 
