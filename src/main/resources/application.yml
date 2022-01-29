@@ -73,7 +73,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: 
+    url:
     driver-class-name: org.postgresql.Driver
     username:
     password:
