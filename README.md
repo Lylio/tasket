@@ -12,6 +12,8 @@ https://tasket-demo.herokuapp.com
 - Spring Boot (JDK 11)
 - React
 - PostgreSQL
+- Maven
+- Liquibase
 
 ### Setup & Launch
 This app includes the plugins _frontend-maven-plugin_ and _maven-resources-plugin_. This enables the Spring Boot
