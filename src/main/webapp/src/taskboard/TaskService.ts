@@ -3,7 +3,7 @@ import {TaskboardItem, TaskboardItemStatus} from './TaskboardTypes';
 
 const production  = 'https://tasket-demo.herokuapp.com';
 const development = 'http://localhost:8080';
-const BASE_URL = (development);
+const BASE_URL = (production);
 
 export const createTask = (task: { description: string; position: number; id: string; title: string; status: TaskboardItemStatus }) => axios.post<TaskboardItem>(`${BASE_URL}/tasks`, task);
 
