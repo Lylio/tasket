@@ -32,6 +32,8 @@ const StyledContent = styled(Content)`
   background-color: ${colors.primary[3]};
 `;
 
+const currentYear = new Date().getFullYear();
+
 function App() {
   return (
     <StyledLayout>
@@ -53,7 +55,7 @@ function App() {
             margin: 'auto'
           }}
         >
-          ©2021 <a href="https://www.linkedin.com/in/lylechristine/">LYLE CHRISTINE</a>
+          ©{currentYear + ' '} <a href="https://www.linkedin.com/in/lylechristine/">LYLE CHRISTINE</a>
         </div>
       </StyledFooter>
     </StyledLayout>
