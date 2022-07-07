@@ -8,31 +8,59 @@
     <changeSet author="lylio" id="2">
         <insert tableName="tasks">
             <column name="id" valueNumeric="10"/>
-            <column name="description" value="Ensure the UUID column works."/>
+            <column name="description" value="Office products are currently locked 😠 (Outlook, Teams, etc). Follow prompts to reset password at the OneDrive login screen."/>
             <column name="position" valueNumeric="0"/>
             <column name="status" value="TODO"/>
-            <column name="title" value="Liquibase Script"/>
+            <column name="title" value="Reset Microsoft password"/>
         </insert>
         <insert tableName="tasks">
             <column name="id" valueNumeric="11"/>
-            <column name="description" value="Confirm second task works"/>
+            <column name="description" value="Firmly decline offer to migrate Oracle DBs to MongoDB, there is just no time for this."/>
             <column name="position" valueNumeric="1"/>
             <column name="status" value="TODO"/>
-            <column name="title" value="Second Row"/>
+            <column name="title" value="Reply to MongoDB Email"/>
         </insert>
         <insert tableName="tasks">
             <column name="id" valueNumeric="12"/>
-            <column name="description" value="This is a task that's in progress"/>
-            <column name="position" valueNumeric="0"/>
-            <column name="status" value="IN_PROGRESS"/>
-            <column name="title" value="Current Activity"/>
+            <column name="description" value="You forgot to add in last week's Tempo ticket activities. 😟 Do this by COB today."/>
+            <column name="position" valueNumeric="2"/>
+            <column name="status" value="TODO"/>
+            <column name="title" value="Update Tempo in Jira"/>
         </insert>
         <insert tableName="tasks">
             <column name="id" valueNumeric="13"/>
-            <column name="description" value="This task has been completed"/>
+            <column name="description" value="Colleague appraisal for Jim.B"/>
+            <column name="position" valueNumeric="0"/>
+            <column name="status" value="IN_PROGRESS"/>
+            <column name="title" value="Finish up final paragraph and send to HR."/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="14"/>
+            <column name="description" value="Test new VPN daemon with previous user creds - if any issue, get back in touch with Simon (Linux admin)."/>
+            <column name="position" valueNumeric="1"/>
+            <column name="status" value="IN_PROGRESS"/>
+            <column name="title" value="New VPN"/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="15"/>
+            <column name="description" value="Goodbye SAlly : Send out RSVP reminders"/>
             <column name="position" valueNumeric="0"/>
             <column name="status" value="DONE"/>
-            <column name="title" value="Congrats - a finished ticket"/>
+            <column name="title" value="Everyone has RSVPd for Sally's leaving do lunch next Friday."/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="16"/>
+            <column name="description" value="Customer app is now deployed in the cloud. Make sure contact database is updated with public URL."/>
+            <column name="position" valueNumeric="1"/>
+            <column name="status" value="DONE"/>
+            <column name="title" value="Update JDBC with public URL"/>
+        </insert>
+        <insert tableName="tasks">
+            <column name="id" valueNumeric="17"/>
+            <column name="description" value="Upgrade to Windows 11"/>
+            <column name="position" valueNumeric="2"/>
+            <column name="status" value="DONE"/>
+            <column name="title" value="Leave install running overnight."/>
         </insert>
     </changeSet>
 </databaseChangeLog>

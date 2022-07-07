@@ -1,6 +1,8 @@
-![](https://github.com/Lylio/image-repo/blob/master/logos/spring-boot.png?raw=true)
-![](https://github.com/Lylio/image-repo/blob/master/logos/react.png?raw=true)
-![](https://github.com/Lylio/image-repo/blob/master/logos/postgres.png?raw=true)
+<br >
+<img src="https://img.shields.io/badge/-spring%20boot-white.svg?style=for-the-badge&logo=SPRING%20BOOT&logoColor=#6DB33F" style="zoom:150%"/>
+<img src="https://img.shields.io/badge/-postgres-4169E1.svg?style=for-the-badge&logo=postgresql&logoColor=white" style="zoom:150%"/>
+<img src="https://img.shields.io/badge/-angular-DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" style="zoom:150%"/>
+
 
 # Tasket
 
