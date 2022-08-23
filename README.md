@@ -7,8 +7,8 @@
 # Tasket
 
 ### Description
-A task board featuring drag 'n' drop functionality. Demo can be found hosted on Heroku:  
-https://tasket-demo.herokuapp.com
+A drag 'n' Drop Task Board. Demo found at:  
+https://tasket.lyle.app/
 
 ### Tech Stack
 - Spring Boot (JDK 11)
