@@ -1,3 +1,6 @@
+server:
+  port: ${PORT:8080}
+
 # Default Database Properties (In memory H2)
 spring:
   banner:
@@ -10,9 +13,6 @@ spring:
       path: /h2 # http://localhost:8080/h2
       settings:
         web-allow-others: true
-  server:
-  port: ${PORT:8080}
-  
   datasource:
     url: jdbc:h2:mem:tasket
     driverClassName: org.h2.Driver
@@ -75,16 +75,24 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  datasource:
-    url:
+   datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
-    username:
-    password:
-logging:
-  level:
-    liquibase: INFO
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+
   jpa:
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    liquibase: INFO
 
 
