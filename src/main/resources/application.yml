@@ -2,34 +2,33 @@ server:
   port: ${PORT:8080}
 
 # Default Database Properties (In memory H2)
+---
+# Prod Database Properties
+
 spring:
   banner:
-    location: banner-default.txt
-  liquibase:
-    change-log: classpath:db/changelog/changelog-master.xml
-  h2:
-    console:
-      enabled: true
-      path: /h2 # http://localhost:8080/h2
-      settings:
-        web-allow-others: true
+    location: banner-prod.txt
+
+  config:
+    activate:
+      on-profile: prod
+
   datasource:
-    url: jdbc:h2:mem:tasket
-    driverClassName: org.h2.Driver
-    username: tasket
-    password: tasket
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+
   jpa:
     hibernate:
       ddl-auto: none
-      use-new-id-generator-mappings: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-    database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
-  config:
-    activate:
-      on-profile: default
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 logging:
   level:
     liquibase: INFO
