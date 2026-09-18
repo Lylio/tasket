@@ -1,23 +1,29 @@
 server:
   port: ${PORT:8080}
 
-# Default Database Properties (In memory H2)
 ---
-# Prod Database Properties
+# Default Database Properties (In-memory H2)
 
 spring:
   banner:
-    location: banner-prod.txt
+    location: banner-default.txt
 
   config:
     activate:
-      on-profile: prod
+      on-profile: default
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:mem:tasket
+    driver-class-name: org.h2.Driver
+    username: tasket
+    password: tasket
+
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true
 
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
@@ -25,56 +31,60 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+      use-new-id-generator-mappings: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
 
 logging:
   level:
     liquibase: INFO
 
 ---
+# Dev Database Properties
 
-# Dev Database Properties (local PostgreSQL)
 spring:
   banner:
     location: banner-dev.txt
-  liquibase:
-    change-log: classpath:/db/changelog/changelog-master.xml
+
   config:
     activate:
       on-profile: dev
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/tasket
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
-logging:
-  level:
-    liquibase: INFO
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+
   jpa:
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    liquibase: INFO
 
 ---
-
-# Prod Database Properties
+# Production / Railway
 
 spring:
   banner:
     location: banner-prod.txt
-  liquibase:
-    change-log: classpath:/db/changelog/changelog-master.xml
+
   config:
     activate:
       on-profile: prod
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-   datasource:
+
+  datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
@@ -93,5 +103,3 @@ spring:
 logging:
   level:
     liquibase: INFO
-
-
