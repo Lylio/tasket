@@ -19,6 +19,8 @@
         <node.version>v15.0.1</node.version>
         <yarn.version>v1.16.0</yarn.version>
     </properties>
+
+    <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
